@@ -1,12 +1,12 @@
 import React, { useState,useEffect } from 'react';
 import firebase from 'firebase/app';
 import * as firebaseui from 'firebaseui'
+
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
    var uiConfig = {
-        signInSuccessUrl: '<url-to-redirect-to-on-success>',
         signInFlow: 'popup',
-         signInSuccessUrl: '/',
+        signInSuccessUrl: '/',
         signInOptions: [
           // Leave the lines as is for the providers you want to offer your users.
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
