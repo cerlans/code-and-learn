@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+  margin:0px;
+  padding:0px;
+  box-sizing:border-box;
+      font-family: 'Montserrat',lato,sans-serif;
+}
+a {
+  text-decoration:none;
+}
+
+body {
+  background:#6c63ff;
+  padding:20px;
+}
+.master {
+  display:flex;
+}
+.sidebar {
+  width:15%;
+  display:flex;
+  align-items: center;
+
+}
+.sidebar i {
+  padding:20px;
+}
+.sidebar ul {
+  width:100% ;
+
+  display:flex;
+  text-align:center;
+  flex-direction:column;
+  list-style-type:none; 
+}
+.sidebar ul li {
+  color:white;
+  cursor:pointer;
+  padding:10px;
+  font-size:22px;
+  text-transform:uppercase;
+  
+  margin-bottom:10px;
+}
+.information-view {
+  width:90%;
+  background:white;
+  height:95vh;
+  border-radius: 1rem;
+}
+
+/* Home Component styling*/
+
+.parent {
+  display:flex;
+  align-items: center;
+  /* the height must be specified for align items to work, otherwise it will have no effect */
+  height:100%;
+  width:100%;
+}
+
+.sign-in {
+  flex:1 !important;
+  padding:2rem;
+ 
+}
+.sign-in h1 {
+
+  padding:2rem;
+  font-size:40px;
+ text-align:center;
+}
+.sign-in .button-container {
+  padding:2rem;
+ text-align:center;
+}
+.sign-in button {
+    background-color: #6c63ff;
+  border-radius: 1rem;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.photo {
+  padding:2rem;
+  flex:1;
+}
+/* The img tag didn't oby the flex:1 directive, its intial sizing overrided the flex property, giving it width 100% fixed it outright since im telling the image to respect the container, im assuming? */
+.photo img {
+  width:100%;
+ 
+}
