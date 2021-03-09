@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-
+import firebase from 'firebase/app';
 function Topics (){
+  //line 9 will be a conditional that will only display if the user isn't logged in.
+   var user = firebase.auth().currentUser;
+  console.log(user)
   return(
     <>
       <div className='topics-header'>
@@ -8,9 +11,8 @@ function Topics (){
         <div>Sign-up for an account to add tutorials to your subscriptions and take notes!</div>
       </div>
       <div className='topics-cont'>
-        <h1>Testing stylings</h1>
         <div className='topics-icons'>
-           <div className='topics-card'>
+           <div className='topics-card' onClick={()=>console.log(user)}>
             <div className='inner'>
             <i class="fab fa-html5"></i>
             </div> 

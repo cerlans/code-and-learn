@@ -104,17 +104,19 @@ body {
   text-align:center;
 }
 .topics-icons{
- border:1px solid;
+ padding:30px;
  display:flex;
  flex-wrap:wrap;
  justify-content:center;
 }
 .topics-icons .topics-card {
   border:1px solid black;
+  cursor:pointer;
   padding:10px;
   font-size:20px;
   margin:20px;
   display:flex;
+  
 }
 .topics-icons .topics-card .inner {
   flex:1;
