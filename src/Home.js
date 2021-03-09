@@ -13,7 +13,7 @@ function Home() {
     if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
-      var uid = user.uid;
+      let uid = user.uid;
       console.log(uid);
       setStatus(true);
       setLoading(false);
@@ -21,12 +21,16 @@ function Home() {
       // User is signed out
       // ...
       setStatus(false);
+      setLoading(false);
     }
    
-  });
+  })
+  var user = firebase.auth().currentUser;
+  console.log(user)
+;
   return (
     <>
-      { isLoading ? <div className='loader'></div> : <div className="parent">
+      { isLoading ? <div className='loader-parent'><div className='loader'></div></div>: <div className="parent">
         <div className="sign-in">
           <h1>Learn to code for free with curated video tutorials!</h1>
           <div className="button-container">

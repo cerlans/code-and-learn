@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import About from './About.js'
 import Login from './Login.js'
 import Home from './Home.js'
-
+import Topics from './Topics.js'
 import { BrowserRouter,Switch,Route,Link,useHistory} from "react-router-dom";
 function Content() {
   
@@ -27,6 +27,9 @@ function Content() {
           </Route>
           <Route path='/Login'>
             <Login/>
+          </Route>
+           <Route path='/Topics'>
+            <Topics/>
           </Route>
         </div>
       </div>
