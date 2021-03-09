@@ -23,7 +23,7 @@ import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
         }
       };
 
-function Topics(){
+function Login(){
  
   return (
     <>
@@ -33,4 +33,4 @@ function Topics(){
 }
 
 
-export default Topics;
+export default Login;
