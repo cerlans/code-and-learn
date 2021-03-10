@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 import firebase from 'firebase/app';
 function Topics (){
   //line 9 will be a conditional that will only display if the user isn't logged in.
@@ -8,7 +10,7 @@ function Topics (){
     <>
       <div className='topics-header'>
         <h1>What do you want to learn?</h1>
-        {user ? <div>you are signed in</div> : <div>Sign-up for an account to add tutorials to your subscriptions and take notes!</div>}
+        {user ? <div>you are signed in</div> : <div> <Link to='/Login'>Sign Up</Link> for an account to add tutorials to your subscriptions and take notes!</div>}
       </div>
       <div className='topics-cont'>
         <div className='topics-icons'>
