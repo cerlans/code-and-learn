@@ -10,7 +10,7 @@ function Topics (){
     <>
       <div className='topics-header'>
         <h1>What do you want to learn?</h1>
-        {user ? <div>you are signed in</div> : <div> <Link to='/Login'>Sign Up</Link> for an account to add tutorials to your subscriptions and take notes!</div>}
+        {user ? <div>you are signed in</div> : <div> <Link to='/Login'><span className='sign-up'>Sign Up</span></Link> for an account to add tutorials to your subscriptions and take notes!</div>}
       </div>
       <div className='topics-cont'>
         <div className='topics-icons'>

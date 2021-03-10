@@ -76,14 +76,17 @@ body {
  text-align:center;
 }
 .sign-in button {
-    background-color: #6c63ff;
-  border-radius: 1rem;
-  color: white;
+  all:unset;
   padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  background:#6c63ff;
+  border-radius: 1rem;
+  color:white;
+  transition:0.2s;
+}
+.sign-in button:hover{
+  background:white;
+  color:#6c63ff;
+  border:1px solid #6c63ff;
 }
 .photo {
   padding:2rem;
@@ -98,6 +101,13 @@ body {
 .topics-header{
   margin-top:5rem;
   text-align:center;
+}
+.topics-header h1 {
+  margin-bottom:1rem;
+}
+.topics-header .sign-up {
+  font-size:24px;
+  text-decoration:underline;
 }
 .topics-cont {
   margin-top:5rem;
