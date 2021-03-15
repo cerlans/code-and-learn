@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import firebase from "firebase/app";
-import * as firebaseui from "firebaseui";
 import { Link } from "react-router-dom";
 import "firebase/app";
 import "firebase/auth";
