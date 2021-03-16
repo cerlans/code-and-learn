@@ -5,7 +5,8 @@ import "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 function Home() {
-  const [status, setStatus] = useState(false);
+  //monitors the sign in status, false = not logged in, true = logged in
+  const [signInStatus, setStatus] = useState(false);
   const [isLoading,setLoading] = useState(true)
   // this functon here monitors the state whether a user is signed in or not
   firebase.auth().onAuthStateChanged((user) => {
@@ -31,9 +32,9 @@ function Home() {
     <>
       { isLoading ? <div className='loader-parent'><div className='loader'></div></div>: <div className="parent">
         <div className="sign-in">
-          <h1>Learn to code for free with curated video tutorials!</h1>
+          {signInStatus ? <h1>Welcome {user.displayName}! </h1> : <h1>Learn to code for free with curated video tutorials!</h1>}
           <div className="button-container">
-              {status ? <div>
+              {signInStatus ? <div>
           <button
             onClick={function () {
               firebase

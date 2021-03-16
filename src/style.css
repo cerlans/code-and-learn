@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 * {
   margin:0px;
   padding:0px;
   box-sizing:border-box;
-  font-family: 'Montserrat',lato,sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 a {
   text-decoration:none;
@@ -120,7 +120,7 @@ body {
  justify-content:center;
 }
 .topics-icons .topics-card {
-  border:1px solid black;
+  
   cursor:pointer;
   padding:10px;
   font-size:20px;
@@ -135,11 +135,12 @@ body {
   flex:1;
   align-items: center;
   display:flex;
-
+  color:white;
 }
 .topics-icons .topics-card i{
   padding:10px;
   font-size:80px;
+ 
 }
 .loader-parent {
   align-items: center;

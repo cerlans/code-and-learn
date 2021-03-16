@@ -4,7 +4,7 @@ import About from './About.js'
 import Login from './Login.js'
 import Home from './Home.js'
 import Topics from './Topics.js'
-import { BrowserRouter,Switch,Route,Link,useHistory} from "react-router-dom";
+import { Route,Link} from "react-router-dom";
 function Content() {
   
   return (

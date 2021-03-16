@@ -4,8 +4,8 @@ function About(){
   return(
     <>
     <div className="information-view">
-      <h1>Testomg</h1>
-      <p>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+      <h1>Hello</h1>
+      <p>I created this application as a way to further increase my skills with React.JS. Sometimes when i watch videos on youtube, i feel like taking notes without pulling up the notepad app. </p>
     </div>
     </>
   )

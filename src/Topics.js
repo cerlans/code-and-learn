@@ -33,13 +33,11 @@ function loadClient() {
               },
               function(err) { console.error("Execute error", err); });
   }
-  gapi.load("client");
+gapi.load("client",function(){
+    console.log('ive finished loading')
+  });
   
-  function compound(event){
-    setQuery(event.target.innerText)
-    execute()
-  
-  }
+
   return(
     <>
       <div className='topics-header'>
@@ -48,31 +46,31 @@ function loadClient() {
       </div>
       <div className='topics-cont'>
         <div className='topics-icons'>
-           <div className='topics-card' onClick={compound} >
+           <div className='topics-card'  style={{background:'#dd4b25'}} >
             <div className='inner'>
-            <i class="fab fa-html5"></i>
+            <i class="fab fa-html5" style={{color:'white'}}></i>
             </div> 
             <div className='text'>
             <p>HTML5</p>
             </div>
           </div>
-          <div className='topics-card' onClick={compound} >
+          <div className='topics-card' style={{background:'#254bdd'}} >
             <div className='inner'>
-            <i class="fab fa-css3-alt"></i>
+            <i class="fab fa-css3-alt" style={{color:'white'}}></i>
             </div> 
             <div className='text'>
             <p>CSS3</p>
             </div>
           </div>
-           <div className='topics-card' onClick={compound}>
+           <div className='topics-card'  style={{background:'#efd81d'}}>
             <div className='inner'>
-            <i class="fab fa-js"></i>
+            <i class="fab fa-js" ></i>
             </div> 
             <div className='text'>
             <p>Javascript (ES6)</p>
             </div>
           </div>
-           <div className='topics-card' onClick={compound}>
+           <div className='topics-card'  style={{background:'#41b883'}}>
             <div className='inner'>
             <i class="fab fa-vuejs"></i>
             </div> 
@@ -80,7 +78,7 @@ function loadClient() {
             <p>Vue.Js</p>
             </div>
           </div>
-           <div className='topics-card'>
+           <div className='topics-card' style={{background:'#5ed3f3'}}>
             <div className='inner'>
             <i class="fab fa-react"></i>
             </div> 
@@ -88,7 +86,7 @@ function loadClient() {
             <p>React.Js</p>
             </div>
           </div>
-           <div className='topics-card'>
+           <div className='topics-card' style={{background:'#8cbf3d'}}>
             <div className='inner'>
             <i class="fab fa-node-js"></i>
             </div> 
@@ -96,9 +94,9 @@ function loadClient() {
             <p>Node.Js</p>
             </div>
           </div>
-           <div className='topics-card'>
+           <div className='topics-card' style={{background:'#4584b6'}}>
             <div className='inner'>
-            <i class="fab fa-python"></i>
+            <i class="fab fa-python" style={{color:'white'}}></i>
             </div> 
             <div className='text'>
             <p>Python</p>
