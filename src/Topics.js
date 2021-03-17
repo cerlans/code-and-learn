@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import Test from "./Test.js";
+import { Link, Route } from "react-router-dom";
 // i need to do something here with state, the state needs to moph into a corresponding string based on the div that was clicked, do i have to use an onclick for each and every single one?
 import firebase from "firebase/app";
 function Topics() {
   const [query, setQuery] = useState("");
   var user = firebase.auth().currentUser;
-
+  // i have to useParams for the link on line 60, a new component has to be rendered, not the same one, but also be a part off the topics component, the guy makes a seperate component, but still denotes the same component that it was used in within the url, the location has to be from within this parameter
   function loadClient() {
     gapi.client.setApiKey("AIzaSyCFiBdff1JxkTe4F_0auryiuqiYMIJd48g");
     return gapi.client
@@ -39,15 +40,14 @@ function Topics() {
       );
   }
 
-  function loader(){
-    
-     let tester = loadClient().then(function () {
-     execute();
-  });
+  function loader() {
+    let tester = loadClient().then(function () {
+      execute();
+    });
   }
 
-  gapi.load("client",function(){
-    console.log('finished loading')
+  gapi.load("client", function () {
+    console.log("finished loading");
   });
   return (
     <>
@@ -55,15 +55,18 @@ function Topics() {
         <button onClick={loadClient}>Load Client</button>
         <button onClick={execute}>Search</button>
         <button onClick={loader}>Testing some More</button>
+        <Link to="/Topics/number">
+          {" "}
+          <button>Testing 1 23</button>
+        </Link>
         <h1>What do you want to learn?</h1>
         {user ? (
           <div>you are signed in</div>
         ) : (
           <div>
-            {" "}
             <Link to="/Login">
               <span className="sign-up">Sign Up</span>
-            </Link>{" "}
+            </Link>
             for an account to add tutorials to your subscriptions and take
             notes!
           </div>
@@ -146,6 +149,9 @@ function Topics() {
             </div>
           </div>
         </div>
+        <Route path="/Topics/number">
+        
+        </Route>
       </div>
     </>
   );
