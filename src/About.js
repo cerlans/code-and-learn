@@ -3,9 +3,12 @@ import React from 'react';
 function About(){
   return(
     <>
-    <div className="information-view">
+    <div className="about">
+      <div className='spread'>
       <h1>Hello</h1>
-      <p>I created this application as a way to further increase my skills with React.JS. Sometimes when i watch videos on youtube, i feel like taking notes without pulling up the notepad app. </p>
+      <p>I created this application out of a desire to further increase my skills in reactJS, and programming in general. When im on youtube, i mostly watch programming videos, and there's been times in which i didn't feel like fully opening up EverNote, i'd have to sign in, create a shared pane with the video im watch on desktop.</p>
+      <p>Code and Learn solves that problem, users can create an account, save videos to watch later, while also having the ability to take notes within the same window. Users have the ability to either sign up, or use the application anonymously through Google's proprietary firebase authentication API  </p>
+      </div>
     </div>
     </>
   )

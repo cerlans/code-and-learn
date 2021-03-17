@@ -27,7 +27,8 @@ function Login(){
  
   return (
     <>
-        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()}/>
+  
+        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} className='firebase-ui'/>
     </>
   )
 }
