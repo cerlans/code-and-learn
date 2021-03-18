@@ -56,7 +56,6 @@ function Topics() {
       <div className="topics-header">
         <button onClick={loadClient}>Load Client</button>
         <button onClick={execute}>Search</button>
-        <button onClick={loader}>Testing some More</button>
         <h1>What do you want to learn?</h1>
         {user ? (
           <div>you are signed in</div>
@@ -96,7 +95,7 @@ function Topics() {
             style={{ background: "#254bdd" }}
           >
             <div className="inner">
-              <i class="fab fa-css3-alt" style={{ color: "white" }}></i>
+              <i class="fab fa-css3-alt"  onClick={loader} style={{ color: "white" }}></i>
             </div>
             <div className="text">
               <p>CSS3</p>
