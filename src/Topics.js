@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Test from "./Test.js";
-import { Link, Route } from "react-router-dom";
+import { Link, Route, useRouteMatch } from "react-router-dom";
 // i need to do something here with state, the state needs to moph into a corresponding string based on the div that was clicked, do i have to use an onclick for each and every single one?
 import firebase from "firebase/app";
 function Topics() {
   const [query, setQuery] = useState("");
-  var user = firebase.auth().currentUser;
+  let { path, url } = useRouteMatch();
+
+  let user = firebase.auth().currentUser;
   // i have to useParams for the link on line 60, a new component has to be rendered, not the same one, but also be a part off the topics component, the guy makes a seperate component, but still denotes the same component that it was used in within the url, the location has to be from within this parameter
   function loadClient() {
     gapi.client.setApiKey("AIzaSyCFiBdff1JxkTe4F_0auryiuqiYMIJd48g");
@@ -55,10 +57,6 @@ function Topics() {
         <button onClick={loadClient}>Load Client</button>
         <button onClick={execute}>Search</button>
         <button onClick={loader}>Testing some More</button>
-        <Link to="/Topics/number">
-          {" "}
-          <button>Testing 1 23</button>
-        </Link>
         <h1>What do you want to learn?</h1>
         {user ? (
           <div>you are signed in</div>
@@ -74,6 +72,7 @@ function Topics() {
       </div>
       <div className="topics-cont">
         <div className="topics-icons">
+        <Link to={`${url}/HTML5`}>
           <div
             className="topics-card"
             onClick={function () {
@@ -88,6 +87,7 @@ function Topics() {
               <p>HTML5</p>
             </div>
           </div>
+          </Link>
           <div
             className="topics-card"
             onClick={function () {
@@ -149,9 +149,7 @@ function Topics() {
             </div>
           </div>
         </div>
-        <Route path="/Topics/number">
-        
-        </Route>
+        <Route path="/Topics/number"></Route>
       </div>
     </>
   );

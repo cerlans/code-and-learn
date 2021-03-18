@@ -2,11 +2,11 @@ import React from "react";
 import Content from "./Content.js";
 import "./style.css";
 import firebase from 'firebase/app';
-import * as firebaseui from 'firebaseui'
+
 import 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
-import { BrowserRouter,Switch,Route,Link,useHistory} from "react-router-dom";
+import { BrowserRouter} from "react-router-dom";
 var firebaseConfig = {
     apiKey: "AIzaSyCjSYyCaUAoeOhwa5xYNbxpJ668xLpRND0",
     authDomain: "restart-1ad32.firebaseapp.com",
