@@ -36,7 +36,7 @@ function Home() {
           <div className="button-container">
               {signInStatus ? <div>
           <button
-            onClick={function () {
+            onClick={() => {
               firebase
                 .auth()
                 .signOut()
@@ -44,7 +44,7 @@ function Home() {
                   // Sign-out successful.
                 })
                 .catch((error) => {
-                  // An error happened.
+                 
                 });
             }}
           >
