@@ -1,3 +1,5 @@
-# Code and Learn
-This application allows the user to watch videos fethched from the YoutubeAPI straight from there browser, users can bookmark videos to save them and watch them at a later time.
-Users can take notes, each note taken will be in sync with the time the video is placed in.
+This is an interactive note taking app that uses firebase authentication to allow users to create accounts, take notes interactively, and watch videos at the same time straight from the browser.
+
+Currently i have the authentication set-up, i used the google auth complete drop in solution. It allows users to make email based/anonymouse or use there own google account to register.
+
+most off the design work is done, but i still have to fully implement the youtube api functionality, and note taking. This is still a work in progress.
