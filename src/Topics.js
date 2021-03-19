@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Test from "./Test.js";
 import { Link, Route, useRouteMatch } from "react-router-dom";
-// i need to do something here with state, the state needs to moph into a corresponding string based on the div that was clicked, do i have to use an onclick for each and every single one?
+
 import firebase from "firebase/app";
 function Topics() {
   const [query, setQuery] = useState("");

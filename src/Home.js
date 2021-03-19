@@ -11,15 +11,13 @@ function Home() {
   // this functon here monitors the state whether a user is signed in or not
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
+     
       let uid = user.uid;
       console.log(uid);
       setStatus(true);
       setLoading(false);
     } else {
-      // User is signed out
-      // ...
+     
       setStatus(false);
       setLoading(false);
     }
