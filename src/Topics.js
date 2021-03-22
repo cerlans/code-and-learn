@@ -8,7 +8,11 @@ function Topics() {
   let { path, url } = useRouteMatch();
 
   let user = firebase.auth().currentUser;
-  // i have to useParams for the link on line 60, a new component has to be rendered, not the same one, but also be a part off the topics component, the guy makes a seperate component, but still denotes the same component that it was used in within the url, the location has to be from within this parameter
+
+    useEffect(() => {
+    gapi.load('client',loadClient); 
+}, []);
+  
   function loadClient() {
     gapi.client.setApiKey("AIzaSyCFiBdff1JxkTe4F_0auryiuqiYMIJd48g");
     return gapi.client
@@ -42,17 +46,12 @@ function Topics() {
       );
   }
 
-  function loader() {
-    let tester = loadClient().then(function () {
-      execute();
-    });
-  }
 
 
   return (
     <>
       <div className="topics-header">
-        <button onClick={loadClient}>Load Client</button>
+      
         <button onClick={execute}>Search</button>
         <h1>What do you want to learn?</h1>
         {user ? (
@@ -93,7 +92,7 @@ function Topics() {
             style={{ background: "#254bdd" }}
           >
             <div className="inner">
-              <i class="fab fa-css3-alt"  onClick={loader} style={{ color: "white" }}></i>
+              <i class="fab fa-css3-alt"  style={{ color: "white" }}></i>
             </div>
             <div className="text">
               <p>CSS3</p>
