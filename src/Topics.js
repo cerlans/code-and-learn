@@ -62,7 +62,7 @@ function Topics() {
         ) : (
           <div>
             <Link to="/Login">
-              <span className="sign-up">Sign Up</span>
+              <span className="sign-up" style={{padding:'20px'}}>Sign Up</span>
             </Link>
             for an account to add tutorials to your subscriptions and take
             notes!
