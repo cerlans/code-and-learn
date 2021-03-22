@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 * {
 	margin: 0px;
 	padding: 0px;
@@ -204,3 +204,90 @@ i,
 p {
 	pointer-events: none;
 }
+
+
+
+@media (min-width:320px)  { 
+ 
+  body {
+    background:initial;
+    padding:0px;
+    color:none;
+  }
+  .master {
+    display:block;
+  }
+  .sidebar {
+    background:#6c63ff;
+    display:block;
+    bottom:0%;
+    width:100%;
+    position:fixed;
+  }
+  .sidebar ul {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+    padding:0px;
+  }
+  .sidebar ul li {
+    color:white;
+    font-size:initial;
+    padding:initial;
+    margin:initial;
+  }
+  .sidebar i {
+    font-size:20px;
+    margin:0px;
+  }
+  .information-view {
+    border-radius:initial;
+    display:block;
+    height: 100%;
+    overflow: scroll;
+    width:100%;
+  }
+  .information-view .parent {
+    flex-direction: column; 
+    padding:0px;
+  }
+  .information-view .sign-in {
+    padding:initial;
+  }
+  .information-view .parent .sign-in h1 {
+    font-size:initial;
+    padding:inherit;
+  }
+  .information-view .parent .photo {
+    order:-1;
+    padding:inherit;
+    width:100%;
+    margin-top:5rem;
+  }
+  .information-view .parent .photo img {
+    width:100%;
+  }
+ }
+
+ /*About Section */
+
+ .information-view .about {
+   padding:2rem;
+   height:auto;
+   width:100%;
+ }
+ .information-view .about p{
+   font-size:initial;
+   letter-spacing:initial;
+   line-height:initial;
+   margin-bottom:2rem;
+
+ }
+
+
+ /* Topics section */
+
+ .information-view .topics-header {
+      width:100%;
+      padding:1rem;
+ }
