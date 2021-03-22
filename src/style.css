@@ -248,21 +248,26 @@ p {
     width:100%;
   }
   .information-view .parent {
+    margin-top:5rem;
     flex-direction: column; 
     padding:0px;
   }
   .information-view .sign-in {
     padding:initial;
+    margin-top:3rem;
+    
   }
   .information-view .parent .sign-in h1 {
-    font-size:initial;
+    /*padding inherit = 0px from .parent class */
+
+    font-size:2rem;
     padding:inherit;
   }
   .information-view .parent .photo {
     order:-1;
     padding:inherit;
     width:100%;
-    margin-top:5rem;
+    
   }
   .information-view .parent .photo img {
     width:100%;
