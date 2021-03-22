@@ -112,7 +112,7 @@ function Topics() {
               <i class="fab fa-js"></i>
             </div>
             <div className="text">
-              <p>Javascript (ES6)</p>
+              <p>Javascript</p>
             </div>
           </div>
           <div className="topics-card" style={{ background: "#41b883" }}>
