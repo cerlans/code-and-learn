@@ -48,9 +48,7 @@ function Topics() {
     });
   }
 
-  gapi.load("client", function () {
-    console.log("finished loading");
-  });
+
   return (
     <>
       <div className="topics-header">
