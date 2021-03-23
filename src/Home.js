@@ -28,7 +28,7 @@ function Home() {
 ;
   return (
     <>
-      { isLoading ? <div className='loader-parent'><div className='loader'></div></div>: <div className="parent">
+      { isLoading ? <div className='loader-parent'><div className='loader'></div></div> : <div className="parent">
         <div className="sign-in">
           {signInStatus ? <h1>Welcome {user.displayName}! </h1> : <h1>Learn to code for free with curated video tutorials!</h1>}
           <div className="button-container">

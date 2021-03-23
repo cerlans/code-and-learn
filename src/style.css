@@ -48,6 +48,7 @@ body {
 	margin-bottom: 10px;
 }
 
+
 .information-view {
 	width: 100%;
 	background: white;
@@ -435,6 +436,8 @@ p {
 	padding: 10px;
 	font-size: 80px;
 }
-
+.ternary-wrapper{
+  all:inherit;
+}
 }
 

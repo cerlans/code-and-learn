@@ -23,18 +23,20 @@ function Content() {
           <ul>
             <Link to="/">
               <li>
-                <i className="fas fa-home"></i>
+                <i className="fas fa-home">
+                </i><span>Home</span>
               </li>
             </Link>
             <Link to="/About">
               <li>
-                <i className="far fa-address-card"></i>
+                <i className="far fa-address-card">
+                </i><span>About</span>
               </li>
             </Link>
             <Link to="/Topics">
               <li>
-                
                 <i className="fas fa-book-open"></i>
+                <span>Topics</span>
               </li>
             </Link>
             {user ? <li onClick={logOut}> <i class="fas fa-sign-out-alt"></i> Logout</li>:<Link to='/Login'><li> <i class="fas fa-users"></i></li></Link>}
