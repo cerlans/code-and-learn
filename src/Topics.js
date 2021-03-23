@@ -3,7 +3,7 @@ import { Link, Route, useRouteMatch } from "react-router-dom";
 import firebase from "firebase/app";
 
 function Topics() {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(" ");
   let { path, url } = useRouteMatch();
   //loader class that allows the gapi client to load before the user selects a topic
   const [isLoading, setLoading] = useState(true);
@@ -12,7 +12,7 @@ function Topics() {
   useEffect(() => {
     gapi.load("client", loadClient);
   },[]);
-
+  
   function loadClient() {
     gapi.client.setApiKey("AIzaSyCFiBdff1JxkTe4F_0auryiuqiYMIJd48g");
     return gapi.client
@@ -48,6 +48,7 @@ function Topics() {
         }
       );
   }
+  
 
   return (
     <>
