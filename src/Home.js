@@ -5,15 +5,13 @@ import "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 function Home() {
-  //monitors the sign in status, false = not logged in, true = logged in
   const [signInStatus, setStatus] = useState(false);
   const [isLoading,setLoading] = useState(true)
-  // this functon here monitors the state whether a user is signed in or not
+  let user = firebase.auth().currentUser;
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
      
       let uid = user.uid;
-      console.log(user.isAnonymous)
       setStatus(true);
       setLoading(false);
     } else {
@@ -22,9 +20,7 @@ function Home() {
       setLoading(false);
     }
    
-  })
-  let user = firebase.auth().currentUser;
-  
+  })  
 ;
 let verify =() =>{
   if(signInStatus){

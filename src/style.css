@@ -243,7 +243,9 @@ p {
 		border-radius: initial;
 		display: block;
 		height: 100%;
+    /*
 		overflow: scroll;
+    */
 		width: 100%;
 	}
 	.information-view .parent {
