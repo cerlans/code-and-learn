@@ -11,6 +11,8 @@ function About(){
       <p>This is still a work in progress, and i am still adding features</p>
       <p>Code and Learn solves that problem, users can create an account, save videos to watch later, while also having the ability to take notes within the same window. Users have the ability to either sign up, or use the application anonymously through Google's proprietary firebase authentication API  </p>
       <p>This is still a work in progress, and i am still adding features</p>
+        <p>Code and Learn solves that problem, users can create an account, save videos to watch later, while also having the ability to take notes within the same window. Users have the ability to either sign up, or use the application anonymously through Google's proprietary firebase authentication API  </p>
+      <p>This is still a work in progress, and i am still adding features</p>
       </div>
     </div>
     </>
