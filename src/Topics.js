@@ -150,7 +150,6 @@ function Topics() {
                 </div>
               </div>
             </div>
-            <Route path="/Topics/number"></Route>
           </div>
         </div>
       )}

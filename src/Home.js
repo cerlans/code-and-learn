@@ -13,7 +13,7 @@ function Home() {
     if (user) {
      
       let uid = user.uid;
-      console.log(uid);
+      console.log(user.isAnonymous)
       setStatus(true);
       setLoading(false);
     } else {
@@ -23,14 +23,21 @@ function Home() {
     }
    
   })
-  var user = firebase.auth().currentUser;
-  console.log(user)
+  let user = firebase.auth().currentUser;
+  
 ;
+let verify =() =>{
+  if(signInStatus){
+    return user.isAnonymous ?  <h1>Welcome anon!</h1> :  <h1>Welcome {user.displayName} !</h1>
+  } else {
+    return <h1>Learn to code for free with curated video tutorials!</h1>
+  }
+}
   return (
     <>
       { isLoading ? <div className='loader-parent'><div className='loader'></div></div> : <div className="parent">
         <div className="sign-in">
-          {signInStatus ? <h1>Welcome {user.displayName}! </h1> : <h1>Learn to code for free with curated video tutorials!</h1>}
+         {verify()}
           <div className="button-container">
               {signInStatus ? <div>
           <button

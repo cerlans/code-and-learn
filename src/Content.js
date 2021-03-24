@@ -1,14 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import About from "./About.js";
 import Login from "./Login.js";
 import Home from "./Home.js";
 import Topics from "./Topics.js";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 import firebase from "firebase/app";
-
+import "firebase/auth";
 function Content() {
-  let user = firebase.auth().currentUser;
-  console.log(user);
+  const [loggedStatus,setLogged] = useState(null)
+  useEffect(()=>{
+    firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      setLogged(true)
+      console.log(user)
+    } else {
+     setLogged(false)
+      console.log(user)
+    }
+  })
+  })
   function logOut() {
     firebase
       .auth()
@@ -23,14 +33,14 @@ function Content() {
           <ul>
             <Link to="/">
               <li>
-                <i className="fas fa-home">
-                </i><span>Home</span>
+                <i className="fas fa-home"></i>
+                <span>Home</span>
               </li>
             </Link>
             <Link to="/About">
               <li>
-                <i className="far fa-address-card">
-                </i><span>About</span>
+                <i className="far fa-address-card"></i>
+                <span>About</span>
               </li>
             </Link>
             <Link to="/Topics">
@@ -39,22 +49,35 @@ function Content() {
                 <span>Topics</span>
               </li>
             </Link>
-            {user ? <li onClick={logOut}> <i class="fas fa-sign-out-alt"></i> Logout</li>:<Link to='/Login'><li> <i class="fas fa-users"></i></li></Link>}
+            {loggedStatus ? (
+              <li onClick={logOut}>
+                
+                <i className="fas fa-sign-out-alt"></i> Logout
+              </li>
+            ) : (
+              <Link to="/Login">
+                <li>
+                  <i className="fas fa-users"></i>Sign In
+                </li>
+              </Link>
+            )}
           </ul>
         </div>
         <div className="information-view">
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/About">
-            <About />
-          </Route>
-          <Route path="/Login">
-            <Login />
-          </Route>
-          <Route path="/Topics">
-            <Topics />
-          </Route>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/About">
+              <About />
+            </Route>
+            <Route path="/Login">
+              <Login />
+            </Route>
+            <Route path="/Topics">
+              <Topics />
+            </Route>
+          </Switch>
         </div>
       </div>
     </>
