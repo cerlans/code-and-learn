@@ -4,4 +4,4 @@ Currently i have the authentication set-up, i used the google auth complete drop
 
 most off the design work is done, but i still have to fully implement the youtube api functionality, and note taking. This is still a work in progress.
 
-CURRENTLY MOBILE DESIGN HAS NOT BEEN SET UP
+
