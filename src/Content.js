@@ -58,7 +58,7 @@ function Content() {
             ) : (
               <Link to="/Login">
                 <li>
-                  <i className="fas fa-users"></i>Sign In
+                  <i className="fas fa-users"></i>
                 </li>
               </Link>
             )}

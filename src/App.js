@@ -22,7 +22,7 @@ if (!firebase.apps.length) {
 
 export default function App() {
  
-  // The sidebar must always be the component that is loaded across the application, but the menu pane must be re-written with the content that was selected. How do i do this?
+
   return (
    <BrowserRouter>
       <Content/>

@@ -124,8 +124,7 @@ p {
 	.sidebar ul li {
 		color: white;
 		font-size: initial;
-		padding: initial;
-		margin: initial;
+		padding: 1rem;
 		text-transform: uppercase;
 	}
 	.sidebar span {
