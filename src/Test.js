@@ -1,11 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from "react";
 
-function Test(){
+
+function Test(props){
   return(
     <>
-      <h1>This is a test</h1>
+    <div className='container'>
+      <div className='thumbnail'>
+        <img src ={props.url}/>
+      </div>
+      <div className='content'>
+        <h1>{props.title}</h1>
+        <p>{props.channel}</p>
+      </div>
+    </div>
     </>
   )
 }
 
-export default Test;
+
+export default Test

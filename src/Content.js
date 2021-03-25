@@ -3,6 +3,7 @@ import About from "./About.js";
 import Login from "./Login.js";
 import Home from "./Home.js";
 import Topics from "./Topics.js";
+import Tuts from './Tuts.js';
 import { Route, Link, Switch } from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/auth";
@@ -64,7 +65,7 @@ function Content() {
           </ul>
         </div>
         <div className="information-view">
-          <Switch>
+         
             <Route exact path="/">
               <Home />
             </Route>
@@ -74,10 +75,12 @@ function Content() {
             <Route path="/Login">
               <Login />
             </Route>
-            <Route path="/Topics">
+            <Route exact path="/Topics">
               <Topics />
             </Route>
-          </Switch>
+            <Route exact path = '/Topics/:id'>
+             <Tuts/>
+            </Route>
         </div>
       </div>
     </>

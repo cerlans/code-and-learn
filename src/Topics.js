@@ -76,11 +76,8 @@ function Topics() {
           </div>
           <div className="topics-cont">
             <div className="topics-icons">
-              <Link to={`${url}/HTML5`}>
-                <div
-                  className="topics-card"
-                  style={{ background: "#dd4b25" }}
-                >
+              <Link to= '/Topics/HTML5'>
+                <div className="topics-card" style={{ background: "#dd4b25" }}>
                   <div className="inner">
                     <i class="fab fa-html5" style={{ color: "white" }}></i>
                   </div>
@@ -89,13 +86,8 @@ function Topics() {
                   </div>
                 </div>
               </Link>
-              <div
-                className="topics-card"
-                onClick={function () {
-                  setQuery("css3");
-                }}
-                style={{ background: "#254bdd" }}
-              >
+              <Link  to ='/Topics/CSS3'>
+              <div className="topics-card" style={{ background: "#254bdd" }}>
                 <div className="inner">
                   <i class="fab fa-css3-alt" style={{ color: "white" }}></i>
                 </div>
@@ -103,13 +95,9 @@ function Topics() {
                   <p>CSS3</p>
                 </div>
               </div>
-              <div
-                className="topics-card"
-                onClick={function () {
-                  setQuery("JavaScript");
-                }}
-                style={{ background: "#efd81d" }}
-              >
+              </Link>
+              <Link  to ='/Topics/JavaScript'>
+              <div className="topics-card" style={{ background: "#efd81d" }}>
                 <div className="inner">
                   <i class="fab fa-js"></i>
                 </div>
@@ -117,6 +105,8 @@ function Topics() {
                   <p>Javascript</p>
                 </div>
               </div>
+              </Link>
+              <Link  to ='/Topics/VueJS'>
               <div className="topics-card" style={{ background: "#41b883" }}>
                 <div className="inner">
                   <i class="fab fa-vuejs"></i>
@@ -125,6 +115,8 @@ function Topics() {
                   <p>Vue.Js</p>
                 </div>
               </div>
+              </Link>
+              <Link  to ='/Topics/ReactJS'>
               <div className="topics-card" style={{ background: "#5ed3f3" }}>
                 <div className="inner">
                   <i class="fab fa-react"></i>
@@ -133,6 +125,8 @@ function Topics() {
                   <p>React.Js</p>
                 </div>
               </div>
+              </Link>
+              <Link  to ='/Topics/NodeJS'>
               <div className="topics-card" style={{ background: "#8cbf3d" }}>
                 <div className="inner">
                   <i class="fab fa-node-js"></i>
@@ -141,6 +135,8 @@ function Topics() {
                   <p>Node.Js</p>
                 </div>
               </div>
+              </Link>
+              <Link  to ='/Topics/Python Programming'>
               <div className="topics-card" style={{ background: "#4584b6" }}>
                 <div className="inner">
                   <i class="fab fa-python" style={{ color: "white" }}></i>
@@ -149,6 +145,7 @@ function Topics() {
                   <p>Python</p>
                 </div>
               </div>
+              </Link>
             </div>
           </div>
         </div>

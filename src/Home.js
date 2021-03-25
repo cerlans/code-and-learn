@@ -24,7 +24,7 @@ function Home() {
 ;
 let verify =() =>{
   if(signInStatus){
-    return user.isAnonymous ?  <h1>Welcome anon!</h1> :  <h1>Welcome {user.displayName} !</h1>
+    return user.isAnonymous ?  <h1>Anonymously signed in</h1> :  <h1>Welcome {user.displayName} !</h1>
   } else {
     return <h1>Learn to code for free with curated video tutorials!</h1>
   }
@@ -45,7 +45,7 @@ let verify =() =>{
                   // Sign-out successful.
                 })
                 .catch((error) => {
-                 
+                 console.log(error)
                 });
             }}
           >

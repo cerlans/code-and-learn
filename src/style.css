@@ -236,6 +236,10 @@ p {
 		padding: initial;
 		margin: initial;
 	}
+  .sidebar ul li span {
+  display:none;
+}
+
 	.sidebar i {
 		font-size: 1.4rem;
 		margin: 0px;
@@ -329,6 +333,10 @@ p {
 		text-transform: uppercase;
 		margin-bottom: 10px;
 	}
+  .sidebar ul li span {
+  display:inline-block;
+}
+
 	.information-view {
 		width: 100%;
 		background: white;
@@ -444,3 +452,23 @@ p {
 }
 }
 
+
+.container {
+  margin:2rem;
+  width:250px;
+  border:1px solid;
+  height:auto;
+}
+.container img {
+  width:100%;
+}
+
+
+
+.card {
+  border:1px solid red;
+  width:200px;
+  padding:40px;
+  margin:20px;
+  cursor:pointer;
+}
