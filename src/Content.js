@@ -34,7 +34,7 @@ function Content() {
           <ul>
             <Link to="/">
               <li>
-                <i className="fas fa-home"></i>
+                <i className="fas fa-home" ></i>
                 <span>Home</span>
               </li>
             </Link>
