@@ -9,7 +9,7 @@ import firebase from "firebase/app";
 import "firebase/auth";
 function Content() {
   const [loggedStatus,setLogged] = useState(null)
-  useEffect(()=>{
+  useEffect(()=> {
     firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       setLogged(true)

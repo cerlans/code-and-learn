@@ -4,10 +4,7 @@ import {useParams} from 'react-router-dom'
 function Tuts(){
    let { id } = useParams();
    const [data,setData] = useState([])
-  console.log(id)
-  useEffect(()=>{
-    execute()
-  })
+   
     function execute() {
     return gapi.client.youtube.search.list({
       "part": [

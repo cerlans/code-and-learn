@@ -2,7 +2,6 @@ import React from "react";
 import Content from "./Content.js";
 import "./style.css";
 import firebase from 'firebase/app';
-
 import 'firebase/app'
 import 'firebase/auth'
 import { BrowserRouter} from "react-router-dom";
