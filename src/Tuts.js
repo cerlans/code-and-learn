@@ -18,6 +18,7 @@ function Tuts() {
           // Handle the results here (response.result has the parsed body).
           setLoading(false)
           setData(response.result.items);
+          console.log(response.result.items)
           
         },
         function (err) {
@@ -40,6 +41,7 @@ function Tuts() {
       {data.map((value) => {
         return (
           <Listings
+            path = {value.id.videoId}
             title={value.snippet.title}
             url={value.snippet.thumbnails.medium.url}
             channel={value.snippet.channelTitle}

@@ -4,19 +4,19 @@ import Login from "./Login.js";
 import Home from "./Home.js";
 import Topics from "./Topics.js";
 import Tuts from './Tuts.js';
-import { Route, Link, Switch } from "react-router-dom";
+import Player from './videoPlayer.js';
+import { Route, Link } from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/auth";
 function Content() {
   const [loggedStatus,setLogged] = useState(null)
+
   useEffect(()=> {
     firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       setLogged(true)
-      console.log(user)
     } else {
      setLogged(false)
-      console.log(user)
     }
   })
   })
@@ -81,6 +81,9 @@ function Content() {
             </Route>
             <Route exact path = '/Topics/:id'>
              <Tuts/>
+            </Route>
+            <Route exact path ='/Topics/Video/:id'>
+             <Player/>
             </Route>
         </div>
       </div>

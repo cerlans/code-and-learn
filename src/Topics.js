@@ -4,7 +4,6 @@ import firebase from "firebase/app";
 
 function Topics() {
   const [query, setQuery] = useState(" ");
-  let { path, url } = useRouteMatch();
   //loader class that allows the gapi client to load before the user selects a topic
   const [isLoading, setLoading] = useState(true);
   let user = firebase.auth().currentUser;
