@@ -3,29 +3,32 @@ import About from "./About.js";
 import Login from "./Login.js";
 import Home from "./Home.js";
 import Topics from "./Topics.js";
-import Tuts from './Tuts.js';
-import Player from './videoPlayer.js';
+import Tuts from "./Tuts.js";
+import Player from "./videoPlayer.js";
+import Courses from "./YourCourses.js";
 import { Route, Link } from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/auth";
 function Content() {
-  const [loggedStatus,setLogged] = useState(null)
+  const [loggedStatus, setLogged] = useState(null);
 
-  useEffect(()=> {
+  useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      setLogged(true)
-    } else {
-     setLogged(false)
-    }
-  })
-  })
+      if (user) {
+        setLogged(true);
+      } else {
+        setLogged(false);
+      }
+    });
+  });
   function logOut() {
     firebase
       .auth()
       .signOut()
       .then(() => {})
-      .catch((error) => {});
+      .catch((error) => {
+        console.log(error);
+      });
   }
   return (
     <>
@@ -34,7 +37,7 @@ function Content() {
           <ul>
             <Link to="/">
               <li>
-                <i className="fas fa-home" ></i>
+                <i className="fas fa-home"></i>
                 <span>Home</span>
               </li>
             </Link>
@@ -50,9 +53,14 @@ function Content() {
                 <span>Topics</span>
               </li>
             </Link>
+            <Link to="/SavedCourses">
+              <li>
+                <i class="fas fa-bookmark"></i>
+                <span>Your Courses</span>
+              </li>
+            </Link>
             {loggedStatus ? (
               <li onClick={logOut}>
-                
                 <i className="fas fa-sign-out-alt"></i> Logout
               </li>
             ) : (
@@ -66,25 +74,27 @@ function Content() {
           </ul>
         </div>
         <div className="information-view">
-         
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/About">
-              <About />
-            </Route>
-            <Route path="/Login">
-              <Login />
-            </Route>
-            <Route exact path="/Topics">
-              <Topics />
-            </Route>
-            <Route exact path = '/Topics/:id'>
-             <Tuts/>
-            </Route>
-            <Route exact path ='/Topics/Video/:id'>
-             <Player/>
-            </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/About">
+            <About />
+          </Route>
+          <Route path="/Login">
+            <Login />
+          </Route>
+          <Route path="/SavedCourses">
+            <Courses />
+          </Route>
+          <Route exact path="/Topics">
+            <Topics />
+          </Route>
+          <Route exact path="/Topics/:id">
+            <Tuts />
+          </Route>
+          <Route exact path="/Topics/Video/:id">
+            <Player />
+          </Route>
         </div>
       </div>
     </>
