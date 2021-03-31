@@ -10,6 +10,11 @@
 
 a {
 	text-decoration: none;
+	color: inherit;
+}
+
+ul {
+	list-style-type: none;
 }
 
 .topics-header h1 {
@@ -31,14 +36,6 @@ a {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-}
-
-.topics-icons .topics-card {
-	cursor: pointer;
-	padding: 10px;
-	font-size: 20px;
-	margin: 20px;
-	display: flex;
 }
 
 .topics-icons .topics-card .inner {
@@ -178,7 +175,7 @@ p {
 	.information-view .parent .sign-in h1 {
 		/*padding inherit = 0px from .parent class */
 		font-size: 2rem;
-		padding: inherit;
+		padding: 2rem;
 	}
 	.information-view .parent .photo {
 		order: -1;
@@ -211,9 +208,41 @@ p {
 
 .information-view .topics-header {
 	width: 100%;
-	padding: 1rem;
+	padding: 1.3rem;
+}
+.information-view .topics-cont {
+  margin:0px;
+}
+.information-view .topics-cont .topics-icons {
+	display: block;
 }
 
+.information-view .topics-card {
+	width: 100%;
+	margin-bottom: 1rem;
+	cursor: pointer;
+	display: flex;
+	font-size: 1.5rem;
+}
+/*video listings nested within topics section */
+
+.information-view .listingParent {
+  display:flex;
+}
+.listingParent .videoListing {
+  width:100%;
+  display:flex;
+  margin:0px;
+  margin-bottom:1rem;
+}
+.listingParent .videoListing .thumbnail {
+flex:1;
+padding:10px;
+}
+.listingParent .videoListing .content {
+flex:1;
+padding:10px;
+}
 @media (min-width:1025px) {
 	body {
 		background: #6c63ff;
@@ -374,22 +403,34 @@ p {
 }
 
 .listingParent {
-display:flex;
-flex-wrap: wrap;
-width:100%;
-justify-content:space-between;
-overflow:hidden;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: space-between;
+	overflow: hidden;
 }
+
 .videoListing {
-  cursor:pointer;
-  width:200px;
-  margin:20px;
-  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+	cursor: pointer;
+	width: 200px;
+	margin: 20px;
+	--tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+
 .videoListing img {
-  width:100%;
+	width: 100%;
 }
-.videoListing .content{
-  padding:1rem;
+
+.videoListing .content {
+	padding: 1rem;
 }
+
+.iframePanel {
+	flex: 1;
+}
+
+.videoDescription {
+	flex: 1;
+}
+
