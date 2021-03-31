@@ -173,7 +173,6 @@ p {
 		margin-top: 3rem;
 	}
 	.information-view .parent .sign-in h1 {
-		/*padding inherit = 0px from .parent class */
 		font-size: 2rem;
 		padding: 2rem;
 	}
@@ -210,6 +209,7 @@ p {
 	width: 100%;
 	padding: 1.3rem;
 }
+
 .information-view .topics-cont {
   margin:0px;
 }
@@ -243,6 +243,7 @@ padding:10px;
 flex:1;
 padding:10px;
 }
+
 @media (min-width:1025px) {
 	body {
 		background: #6c63ff;
