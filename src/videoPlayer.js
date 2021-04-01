@@ -1,12 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from "react-router-dom";
+import firebase from "firebase/app";
+import "firebase/auth";
+import { useParams, Link } from "react-router-dom";
 
 function Player(){
     let { id } = useParams();
     const [description,setDescription] = useState('');
     const [isLoading, setLoading] = useState(true);
+    const [isLogged, setLogged] = useState(null);
 
-  console.log(id);
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        setLogged(true);
+      } else {
+        setLogged(false);
+      }
+    });
+  });
     function execute() {
     return gapi.client.youtube.videos.list({
       "part": [
@@ -46,6 +57,8 @@ function Player(){
         allowfullscreen
         title='video'
      />
+
+     {isLogged ? (<div><button> Add to your courses</button></div>) :(<div><Link to ='/Login'>You must be logged in to save videos and take notes</Link></div>)}
      </div>
      <div className='videoDescription'>
      {description.description}

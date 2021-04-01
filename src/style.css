@@ -229,6 +229,7 @@ p {
 
 iframe {
   width:100% !important;
+  
 }
 
 @media (min-width:1025px) {
@@ -349,7 +350,7 @@ iframe {
   .topics-icons a {
     margin-left:1rem;
   }
-	.topics-icons .topics-card {
+	.information-view .topics-icons .topics-card {
 		display: flex;
 		cursor: pointer;
 		padding: 10px;
@@ -372,6 +373,7 @@ iframe {
 	.ternary-wrapper {
 		all: inherit;
 	}
+
   .container {
 	margin: 2rem;
 	width: 250px;
@@ -415,6 +417,10 @@ iframe {
 
 .videoListing .content {
 	padding: 1rem;
+}
+
+  iframe {
+  height:400px;
 }
 
 .iframePanel {

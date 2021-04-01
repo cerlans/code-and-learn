@@ -53,12 +53,17 @@ function Content() {
                 <span>Topics</span>
               </li>
             </Link>
-            <Link to="/SavedCourses">
+            {loggedStatus ? (<Link to="/SavedCourses">
               <li>
                 <i class="fas fa-bookmark"></i>
                 <span>Your Courses</span>
               </li>
-            </Link>
+            </Link>): (<Link to="/SavedCourses" style={{display:'none'}}>
+              <li>
+                <i class="fas fa-bookmark"></i>
+                <span>Your Courses</span>
+              </li>
+            </Link>)}
             {loggedStatus ? (
               <li onClick={logOut}>
                 <i className="fas fa-sign-out-alt"></i> Logout
