@@ -3,7 +3,9 @@ import { useParams } from "react-router-dom";
 
 function Player(){
     let { id } = useParams();
-    const [description,setDescription] = useState('')
+    const [description,setDescription] = useState('');
+    const [isLoading, setLoading] = useState(true);
+
   console.log(id);
     function execute() {
     return gapi.client.youtube.videos.list({
@@ -16,10 +18,14 @@ function Player(){
     })
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
-                console.log("Response", response.result.items[0].snippet.description);
-                setDescription(response.result.items[0].snippet.description)
+                
+                setDescription(response.result.items[0].snippet)
+                setLoading(false)
               },
-              function(err) { console.error("Execute error", err); });
+              function(err) { 
+                console.error("Execute error", err);
+                setLoading(false)
+                 });
   }
   useEffect(()=>{
     execute()
@@ -27,18 +33,24 @@ function Player(){
 
   return (
     <>
-    <div className='iframePanel'>
+   {isLoading ? (<div className="loader-parent">
+                  <div className="loader"></div>
+        </div>)
+        :
+        <>  
+        <div className='iframePanel'>
+     <h1>{` '${description.title}' by ${description.channelTitle}`}</h1>
      <iframe src={`https://www.youtube.com/embed/${id}`}
         frameborder='0'
         allow='autoplay; encrypted-media'
         allowfullscreen
         title='video'
-        width="640" height="390"
      />
      </div>
      <div className='videoDescription'>
-     {JSON.stringify(description, null, "\n")}
-     </div>
+     {description.description}
+     </div> 
+     </>}
     </>
   )
 }

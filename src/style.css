@@ -130,6 +130,7 @@
 }
 .information-view .topics-cont{
   padding:2rem;
+  margin-bottom:2rem;
 }
 .information-view .topics-cont .topics-icons {
 	display: block;
@@ -162,7 +163,7 @@
 .information-view .listingParent {
   display:flex;
   flex-direction:column;
-
+  margin-bottom:3rem;
 }
 .listingParent .videoListing {
   width:100%;
@@ -221,8 +222,14 @@ p {
 	pointer-events: none;
 }
 
+.iframePanel{
+  padding:1rem;
+  text-align:center;
+}
 
-
+iframe {
+  width:100% !important;
+}
 
 @media (min-width:1025px) {
 	body {
@@ -384,8 +391,9 @@ p {
 	cursor: pointer;
 }
 
-.listingParent {
+.information-view .listingParent {
 	display: flex;
+  flex-direction:row;
 	flex-wrap: wrap;
 	width: 100%;
 	justify-content: space-between;
