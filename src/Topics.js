@@ -3,7 +3,6 @@ import { Link, Route, useRouteMatch } from "react-router-dom";
 import firebase from "firebase/app";
 
 function Topics() {
-  const [query, setQuery] = useState(" ");
   //loader class that allows the gapi client to load before the user selects a topic
   const [isLoading, setLoading] = useState(true);
   let user = firebase.auth().currentUser;
@@ -18,7 +17,6 @@ function Topics() {
       .load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
       .then(
         function () {
-          console.log("GAPI client loaded for API");
           setLoading(false);
         },
         function (err) {
@@ -28,26 +26,6 @@ function Topics() {
 
   }
 
-  // Make sure the client is loaded before calling this method.
-  function execute() {
-    return gapi.client.youtube.search
-      .list({
-        part: ["snippet"],
-        maxResults: 10,
-        q: query,
-        type: ["video"],
-      })
-      .then(
-        function (response) {
-          // Handle the results here (response.result has the parsed body).
-          console.log("Response", response);
-        },
-        function (err) {
-          console.error("Execute error", err);
-        }
-      );
-  }
-  
 
   return (
     <>

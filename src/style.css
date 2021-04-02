@@ -123,7 +123,11 @@
   text-transform:uppercase;
   
 }
-
+.information-view .sign-up {
+  color:blue;
+  text-decoration:underline;
+  font-size:1.5rem;
+}
 .information-view .topics-header {
 	width: 100%;
 	padding: 1.3rem;
@@ -142,7 +146,7 @@
 	cursor: pointer;
 	display: flex;
 	font-size: 1.5rem;
-  padding:2rem;
+  padding:1.5rem;
 }
 .information-view .topics-card i {
   font-size:4.5rem;
@@ -229,9 +233,11 @@ p {
 
 iframe {
   width:100% !important;
-  
+  height:250px;
 }
-
+.videoDescription{
+  padding:1rem;
+}
 @media (min-width:1025px) {
 	body {
 		background: #6c63ff;
@@ -334,10 +340,7 @@ iframe {
 	.topics-header h1 {
 		margin-bottom: 1rem;
 	}
-	.topics-header .sign-up {
-		font-size: 24px;
-		text-decoration: underline;
-	}
+
 	.topics-cont {
 		margin-top: 0rem;
 		text-align: center;
