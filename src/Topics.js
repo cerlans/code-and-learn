@@ -56,7 +56,7 @@ function Topics() {
               <Link to= '/Topics/HTML5'>
                 <div className="topics-card" style={{ background: "#dd4b25" }}>
                   <div className="inner">
-                    <i class="fab fa-html5" style={{ color: "white" }}></i>
+                    <i className="fab fa-html5" style={{ color: "white" }}></i>
                   </div>
                   <div className="text">
                     <p>HTML5</p>
@@ -66,7 +66,7 @@ function Topics() {
               <Link  to ='/Topics/CSS3'>
               <div className="topics-card" style={{ background: "#254bdd" }}>
                 <div className="inner">
-                  <i class="fab fa-css3-alt" style={{ color: "white" }}></i>
+                  <i className="fab fa-css3-alt" style={{ color: "white" }}></i>
                 </div>
                 <div className="text">
                   <p>CSS3</p>
@@ -76,7 +76,7 @@ function Topics() {
               <Link  to ='/Topics/JavaScript'>
               <div className="topics-card" style={{ background: "#efd81d" }}>
                 <div className="inner">
-                  <i class="fab fa-js"></i>
+                  <i className="fab fa-js"></i>
                 </div>
                 <div className="text">
                   <p>Javascript</p>
@@ -86,7 +86,7 @@ function Topics() {
               <Link  to ='/Topics/VueJS'>
               <div className="topics-card" style={{ background: "#41b883" }}>
                 <div className="inner">
-                  <i class="fab fa-vuejs"></i>
+                  <i className="fab fa-vuejs"></i>
                 </div>
                 <div className="text">
                   <p>Vue.Js</p>
@@ -96,7 +96,7 @@ function Topics() {
               <Link  to ='/Topics/ReactJS'>
               <div className="topics-card" style={{ background: "#5ed3f3" }}>
                 <div className="inner">
-                  <i class="fab fa-react"></i>
+                  <i className="fab fa-react"></i>
                 </div>
                 <div className="text">
                   <p>React.Js</p>
@@ -106,7 +106,7 @@ function Topics() {
               <Link  to ='/Topics/NodeJS'>
               <div className="topics-card" style={{ background: "#8cbf3d" }}>
                 <div className="inner">
-                  <i class="fab fa-node-js"></i>
+                  <i className="fab fa-node-js"></i>
                 </div>
                 <div className="text">
                   <p>Node.Js</p>
@@ -116,7 +116,7 @@ function Topics() {
               <Link  to ='/Topics/Python Programming'>
               <div className="topics-card" style={{ background: "#4584b6" }}>
                 <div className="inner">
-                  <i class="fab fa-python" style={{ color: "white" }}></i>
+                  <i className="fab fa-python" style={{ color: "white" }}></i>
                 </div>
                 <div className="text">
                   <p>Python</p>

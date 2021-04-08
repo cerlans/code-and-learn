@@ -62,7 +62,7 @@ function Player() {
 
             {isLogged ? (
               <div>
-                <button> Add to your courses</button>
+                <button className='addCourseButton'> Add to your courses</button>
               </div>
             ) : (
               <div style={{ color: "blue" }}>

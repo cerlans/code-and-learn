@@ -238,6 +238,15 @@ iframe {
 .videoDescription{
   padding:1rem;
 }
+.addCourseButton{
+  all:unset;
+  padding: 15px 32px;
+  background: #6c63ff;
+  border-radius: 1rem;
+  color: white;
+  transition: 0.2s;
+  cursor:pointer;
+}
 @media (min-width:1025px) {
 	body {
 		background: #6c63ff;
