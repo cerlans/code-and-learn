@@ -15,6 +15,7 @@ var firebaseConfig = {
     measurementId: "G-0M9VW8FHW3"
   };
 
+//prevents multiple instances of firebase running at the same time.
 if (!firebase.apps.length) {
    firebase.initializeApp(firebaseConfig);
 }
