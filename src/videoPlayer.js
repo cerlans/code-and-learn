@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import firebase from "firebase/app";
 import "firebase/auth";
+import "firebase/firestore";
+
 import { useParams, Link, useLocation } from "react-router-dom";
 
 function Player() {
@@ -9,11 +11,17 @@ function Player() {
   const [isLoading, setLoading] = useState(true);
   const [isLogged, setLogged] = useState(null); 
   let data = useLocation();
+  console.log(data)
+  var db = firebase.firestore();
+  console.log(db)
+
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         setLogged(true);
+        console.log(user)
+        console.log('is this working?')
       } else {
         setLogged(false);
       }
@@ -55,14 +63,14 @@ function Player() {
             <iframe
               src={`https://www.youtube.com/embed/${id}`}
               frameborder="0"
-              allow="autoplay; encrypted-media"
               allowfullscreen
               title="video"
             />
 
             {isLogged ? (
               <div>
-                <button className='addCourseButton'> Add to your courses</button>
+                <button className='addCourseButton'>
+                Add to your courses</button>
               </div>
             ) : (
               <div style={{ color: "blue" }}>

@@ -9,18 +9,26 @@ import Courses from "./YourCourses.js";
 import { Route, Link } from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/auth";
+import "firebase/firestore";
+
 function Content() {
   const [loggedStatus, setLogged] = useState(null);
+  var db = firebase.firestore();
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
+        db.collection('Users').doc(user.uid).set({
+          userName: user.displayName,
+          anonymousLogin: user.isAnonymous,
+          userId: user.uid
+        }).then(()=>{console.log('doc succesfully written!')})
         setLogged(true);
       } else {
         setLogged(false);
       }
     });
-  });
+  },[]);
   function logOut() {
     firebase
       .auth()

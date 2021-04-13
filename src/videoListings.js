@@ -4,7 +4,10 @@ import {Link} from 'react-router-dom'
 function Listings(props){
   return(
     <>
-    <Link to = {`/Topics/Video/${props.path}`}>
+    <Link to = {{
+      pathname:`/Topics/Video/${props.path}`,
+      state:props.videoValue
+    }}>
     <div className='videoListing'>
       <div className='thumbnail'>
         <img src ={props.url}/>

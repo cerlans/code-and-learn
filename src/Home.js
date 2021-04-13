@@ -11,6 +11,7 @@ function Home() {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       let uid = user.uid;
+    
       setStatus(true);
       setLoading(false);
     } else {
