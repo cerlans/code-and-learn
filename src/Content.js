@@ -22,7 +22,9 @@ function Content() {
           userName: user.displayName,
           anonymousLogin: user.isAnonymous,
           userId: user.uid
-        }).then(()=>{console.log('doc succesfully written!')})
+        }).then(()=>{console.log('doc succesfully written!')}).then(()=>{console.log(db.collection('Users').doc(user.uid).get().then((doc)=>{
+          console.log(user.isAnonymous)
+        }))})
         setLogged(true);
       } else {
         setLogged(false);
