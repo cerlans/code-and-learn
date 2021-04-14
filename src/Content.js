@@ -15,6 +15,8 @@ function Content() {
   const [loggedStatus, setLogged] = useState(null);
   var db = firebase.firestore();
 
+  //let dataBaseReference = db.collection('Users').doc(user.uid);
+  
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {

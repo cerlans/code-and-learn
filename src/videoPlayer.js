@@ -9,24 +9,25 @@ function Player() {
   let { id } = useParams();
   const [description, setDescription] = useState("");
   const [isLoading, setLoading] = useState(true);
-  const [isLogged, setLogged] = useState(null); 
+  const [isLogged, setLogged] = useState(null);
   let data = useLocation();
-  console.log(data)
-  var db = firebase.firestore();
-  console.log(db)
 
+  var db = firebase.firestore();
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         setLogged(true);
-        console.log(user)
-      
       } else {
         setLogged(false);
       }
     });
-  },[]);
+  }, []);
+  
+  useEffect(() => {
+    execute();
+  }, []);
+
   function execute() {
     return gapi.client.youtube.videos
       .list({
@@ -46,9 +47,7 @@ function Player() {
         }
       );
   }
-  useEffect(() => {
-    execute();
-  }, []);
+
 
   return (
     <>
@@ -62,15 +61,24 @@ function Player() {
             <h1>{` '${description.title}' by ${description.channelTitle}`}</h1>
             <iframe
               src={`https://www.youtube.com/embed/${id}`}
-              frameborder="0"
-              allowfullscreen
               title="video"
             />
-
             {isLogged ? (
               <div>
-                <button className='addCourseButton'>
-                Add to your courses</button>
+                <button className="addCourseButton" onClick={()=>{
+                   db.collection(`Users/${user.uid}/SavedVideos`)
+                    .add({
+                        name: "Formula 1",
+                        state: "CReubT",
+                        country: "United States OF America",
+                      })
+                      .then(() => {
+                        console.log("Document successfully written!");
+                      })
+                      .catch((error) => {
+                        console.error("Error writing document: ", error);
+                      });
+                }}>Add to your courses</button>
               </div>
             ) : (
               <div style={{ color: "blue" }}>
@@ -88,3 +96,18 @@ function Player() {
 }
 
 export default Player;
+
+/* 
+   db.collection(`Users/${user.uid}/SavedVideos`)
+                    .add({
+                        name: "Formula 1",
+                        state: "CReubT",
+                        country: "United States OF America",
+                      })
+                      .then(() => {
+                        console.log("Document successfully written!");
+                      })
+                      .catch((error) => {
+                        console.error("Error writing document: ", error);
+                      });
+*/
