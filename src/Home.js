@@ -11,7 +11,7 @@ function Home() {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       let uid = user.uid;
-    
+
       setStatus(true);
       setLoading(false);
     } else {
@@ -21,7 +21,12 @@ function Home() {
   });
   let verify = () => {
     if (signInStatus && user.isAnonymous) {
-      return <h1>You Are Anonymously Signed in</h1>;
+      return (
+        <>
+          <h1>You Are Anonymously Signed in</h1>
+          <p>Your Data Will be lost after signing out</p>
+        </>
+      );
     } else if (signInStatus) {
       return <h1>Welcome {user.displayName} !</h1>;
     } else {

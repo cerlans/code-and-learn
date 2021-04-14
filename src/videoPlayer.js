@@ -21,12 +21,12 @@ function Player() {
       if (user) {
         setLogged(true);
         console.log(user)
-        console.log('is this working?')
+      
       } else {
         setLogged(false);
       }
     });
-  });
+  },[]);
   function execute() {
     return gapi.client.youtube.videos
       .list({
@@ -86,11 +86,5 @@ function Player() {
     </>
   );
 }
-// at this point, once the user logs in, the button will contain a function, but what kind off function? 
-// a function that has to pass the video link to a seperate component, it seems easy now, but that would mean passing data between components which is something i haven't fully done yet.
-// i can use the Link To again, an object, with the video url. The your saved courses will be literally the same as the video player, but note taking is enabled.
-// they must be seperate components to allow saved courses functionality, otherwise you can't save anything
-// ill reuse the video player component with some extras mixed in
-// The link to object seems to easy, and i feel like there might be some problems with it that i can't see yet.
-// from that video that was selected, what data do i have to send? the entire data block? i think i'll just send the entire data block off the video that was selected, rather than just the video ID
+
 export default Player;

@@ -38,7 +38,7 @@ function Topics() {
           <div className="topics-header">
             <h1>What do you want to learn?</h1>
             {user ? (
-              <div>you are signed in</div>
+              <span>you are signed in</span>
             ) : (
               <div>
                 <Link to="/Login">

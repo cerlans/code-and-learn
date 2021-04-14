@@ -18,19 +18,18 @@ function Content() {
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        db.collection('Users').doc(user.uid).set({
+        db.collection("Users").doc(user.uid).set({
           userName: user.displayName,
           anonymousLogin: user.isAnonymous,
-          userId: user.uid
-        }).then(()=>{console.log('doc succesfully written!')}).then(()=>{console.log(db.collection('Users').doc(user.uid).get().then((doc)=>{
-          console.log(user.isAnonymous)
-        }))})
+          userId: user.uid,
+          email: user.email,
+        });
         setLogged(true);
       } else {
         setLogged(false);
       }
     });
-  },[]);
+  }, []);
   function logOut() {
     firebase
       .auth()
@@ -63,17 +62,21 @@ function Content() {
                 <span>Topics</span>
               </li>
             </Link>
-            {loggedStatus ? (<Link to="/SavedCourses">
-              <li>
-                <i className="fas fa-bookmark"></i>
-                <span>Your Courses</span>
-              </li>
-            </Link>): (<Link to="/SavedCourses" style={{display:'none'}}>
-              <li>
-                <i className="fas fa-bookmark"></i>
-                <span>Your Courses</span>
-              </li>
-            </Link>)}
+            {loggedStatus ? (
+              <Link to="/SavedCourses">
+                <li>
+                  <i className="fas fa-bookmark"></i>
+                  <span>Your Courses</span>
+                </li>
+              </Link>
+            ) : (
+              <Link to="/SavedCourses" style={{ display: "none" }}>
+                <li>
+                  <i className="fas fa-bookmark"></i>
+                  <span>Your Courses</span>
+                </li>
+              </Link>
+            )}
             {loggedStatus ? (
               <li onClick={logOut}>
                 <i className="fas fa-sign-out-alt"></i> <span>LogOut</span>

@@ -39,7 +39,7 @@ function Tuts() {
       {data.map((value) => {
         return (
           <Listings
-            videoValue = {value}
+            videoValue = {value.snippet}
             path = {value.id.videoId}
             title={value.snippet.title}
             url={value.snippet.thumbnails.medium.url}
