@@ -246,11 +246,18 @@ iframe {
 .addCourseButton{
   all:unset;
   padding: 15px 32px;
-  background: #6c63ff;
+  border:1px solid #6c63ff;
   border-radius: 1rem;
-  color: white;
-  transition: 0.2s;
+  color:#6c63ff;
   cursor:pointer;
+}
+.courseAddedButton{
+  all:unset;
+  padding: 15px 32px;
+  background:#6c63ff;
+  color:white;
+  cursor:pointer;
+  border-radius:1rem;
 }
 @media (min-width:1025px) {
 	body {

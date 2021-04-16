@@ -7,9 +7,12 @@ import { useParams, Link, useLocation } from "react-router-dom";
 
 function Player() {
   let { id } = useParams();
-  const [description, setDescription] = useState("");
+  const [video, setVideo] = useState("");
   const [isLoading, setLoading] = useState(true);
   const [isLogged, setLogged] = useState(null);
+  const [userId,setId] = useState()
+  const [buttonText,setButtonText] = useState('Add to your courses')
+  const [currentClass,toggleClass] = useState('addCourseButton')
   let data = useLocation();
 
   var db = firebase.firestore();
@@ -17,6 +20,8 @@ function Player() {
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
+        let id= user.uid
+        setId(id)
         setLogged(true);
       } else {
         setLogged(false);
@@ -38,7 +43,7 @@ function Player() {
         function (response) {
           // Handle the results here (response.result has the parsed body).
 
-          setDescription(response.result.items[0].snippet);
+          setVideo(response.result.items[0].snippet);
           setLoading(false);
         },
         function (err) {
@@ -58,27 +63,31 @@ function Player() {
       ) : (
         <>
           <div className="iframePanel">
-            <h1>{` '${description.title}' by ${description.channelTitle}`}</h1>
+            <h1>{` '${video.title}' by ${video.channelTitle}`}</h1>
             <iframe
               src={`https://www.youtube.com/embed/${id}`}
               title="video"
             />
             {isLogged ? (
               <div>
-                <button className="addCourseButton" onClick={()=>{
-                   db.collection(`Users/${user.uid}/SavedVideos`)
+                <button className={currentClass} onClick={()=>{
+                   db.collection(`Users/${userId}/SavedVideos`)
                     .add({
-                        name: "Formula 1",
-                        state: "CReubT",
-                        country: "United States OF America",
+                        channelTitle: video.channelTitle,
+                        videoTitle: video.title,
+                        videoDescription: video.description,
+                        videoId:id,
+                        videoThumbnail:video.thumbnails.medium.url
                       })
                       .then(() => {
                         console.log("Document successfully written!");
+                        setButtonText('Course Added!')
+                        toggleClass('courseAddedButton')
                       })
                       .catch((error) => {
                         console.error("Error writing document: ", error);
                       });
-                }}>Add to your courses</button>
+                }}>{buttonText}</button>
               </div>
             ) : (
               <div style={{ color: "blue" }}>
@@ -88,7 +97,7 @@ function Player() {
               </div>
             )}
           </div>
-          <div className="videoDescription">{description.description}</div>
+          <div className="videoDescription">{video.description}</div>
         </>
       )}
     </>
@@ -97,17 +106,3 @@ function Player() {
 
 export default Player;
 
-/* 
-   db.collection(`Users/${user.uid}/SavedVideos`)
-                    .add({
-                        name: "Formula 1",
-                        state: "CReubT",
-                        country: "United States OF America",
-                      })
-                      .then(() => {
-                        console.log("Document successfully written!");
-                      })
-                      .catch((error) => {
-                        console.error("Error writing document: ", error);
-                      });
-*/

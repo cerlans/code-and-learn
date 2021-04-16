@@ -20,7 +20,7 @@ function Home() {
     }
   });
   let verify = () => {
-    if (signInStatus && user.isAnonymous) {
+    if (user.isAnonymous) {
       return (
         <>
           <h1>You Are Anonymously Signed in</h1>

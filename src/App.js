@@ -5,7 +5,7 @@ import firebase from 'firebase/app';
 import 'firebase/app'
 import 'firebase/auth'
 import { BrowserRouter} from "react-router-dom";
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyCjSYyCaUAoeOhwa5xYNbxpJ668xLpRND0",
     authDomain: "restart-1ad32.firebaseapp.com",
     projectId: "restart-1ad32",
