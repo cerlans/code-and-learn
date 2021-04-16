@@ -20,16 +20,9 @@ function Home() {
     }
   });
   let verify = () => {
-    if (user.isAnonymous) {
-      return (
-        <>
-          <h1>You Are Anonymously Signed in</h1>
-          <p>Your Data Will be lost after signing out</p>
-        </>
-      );
-    } else if (signInStatus) {
+   if (signInStatus) {
       return <h1>Welcome {user.displayName} !</h1>;
-    } else {
+    } else if(user === null) {
       return <h1>Learn to code for free with curated video tutorials!</h1>;
     }
   };
