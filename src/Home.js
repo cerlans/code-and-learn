@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import firebase from "firebase/app";
 import { Link } from "react-router-dom";
 import "firebase/app";
@@ -20,12 +20,22 @@ function Home() {
     }
   });
   let verify = () => {
-   if (signInStatus) {
+    if (user.isAnonymous) {
+      return (
+        <>
+          <h1>You Are Anonymously Signed in</h1>
+          <p>Your Data Will be lost after signing out</p>
+        </>
+      );
+    } else if (signInStatus) {
       return <h1>Welcome {user.displayName} !</h1>;
     } else if(user === null) {
       return <h1>Learn to code for free with curated video tutorials!</h1>;
     }
   };
+  useEffect(() => { 
+    
+  },[]);
   return (
     <>
       {isLoading ? (
@@ -35,7 +45,7 @@ function Home() {
       ) : (
         <div className="parent">
           <div className="sign-in">
-            {verify()}
+            
             <div className="button-container">
               {signInStatus ? (
                 <div>
