@@ -54,7 +54,7 @@ function Home() {
                         .auth()
                         .signOut()
                         .then(() => {
-                          // Sign-out successful.
+                          setStatus(false);
                         })
                         .catch((error) => {
                           console.log(error);
