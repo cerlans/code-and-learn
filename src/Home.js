@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import firebase from "firebase/app";
 import { Link } from "react-router-dom";
 import "firebase/app";
@@ -8,6 +8,7 @@ function Home() {
   const [signInStatus, setStatus] = useState(false);
   const [isLoading, setLoading] = useState(true);
   let user = firebase.auth().currentUser;
+
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       let uid = user.uid;
@@ -19,23 +20,24 @@ function Home() {
       setLoading(false);
     }
   });
+
   let verify = () => {
-    if (user.isAnonymous) {
-      return (
+    if (signInStatus) {
+      return user.isAnonymous ? (
         <>
-          <h1>You Are Anonymously Signed in</h1>
-          <p>Your Data Will be lost after signing out</p>
+          <h1>Guest User detected</h1>
+          <p>Your data will be lost upon signing out</p>
+        </>
+      ) : (
+        <>
+          <h1>Welcome {user.displayName}</h1>
         </>
       );
-    } else if (signInStatus) {
-      return <h1>Welcome {user.displayName} !</h1>;
-    } else if(user === null) {
+    } else if (signInStatus === false) {
       return <h1>Learn to code for free with curated video tutorials!</h1>;
     }
   };
-  useEffect(() => { 
-    
-  },[]);
+
   return (
     <>
       {isLoading ? (
@@ -45,7 +47,7 @@ function Home() {
       ) : (
         <div className="parent">
           <div className="sign-in">
-            
+            {verify()}
             <div className="button-container">
               {signInStatus ? (
                 <div>
@@ -84,3 +86,17 @@ function Home() {
 }
 
 export default Home;
+/* if (user.isAnonymous) {
+        return (
+          <>
+            <h1>Guest User detected</h1>
+            <p>Your data will be lost upon signing out</p>
+          </>
+        );
+      } else {
+        return (
+          <>
+            <h1>Welcome {user.displayName}</h1>
+          </>
+        );
+      } */

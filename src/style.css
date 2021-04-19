@@ -97,7 +97,7 @@
 		width: 100%;
 	}
 	.information-view .parent .photo img {
-		width: 100%;
+		max-width: 100%;
 	}
 
 /*About Section */
@@ -259,6 +259,17 @@ iframe {
   cursor:pointer;
   border-radius:1rem;
 }
+@media (min-width:600px)  { 
+  .information-view .sign-in {
+    margin-top:0px;
+  }
+  .information-view .parent .photo{
+    text-align:center;
+  }
+  .information-view .parent .photo img {
+   max-width:600px;
+}
+ }
 @media (min-width:1025px) {
 	body {
 		background: #6c63ff;
