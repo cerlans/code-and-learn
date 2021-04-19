@@ -7,12 +7,13 @@ import "firebase/firestore";
 function Home() {
   const [signInStatus, setStatus] = useState(false);
   const [isLoading, setLoading] = useState(true);
+  const [isAnon,setAnon] = useState(false)
   let user = firebase.auth().currentUser;
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       let uid = user.uid;
-
+      user.isAnonymous ? setAnon(true) : setAnon(false)
       setStatus(true);
       setLoading(false);
     } else {
@@ -23,20 +24,16 @@ function Home() {
 
   let verify = () => {
     if (signInStatus) {
-      return user.isAnonymous ? (
-        <>
-          <h1>Guest User detected</h1>
-          <p>Your data will be lost upon signing out</p>
-        </>
-      ) : (
-        <>
-          <h1>Welcome {user.displayName}</h1>
-        </>
-      );
-    } else if (signInStatus === false) {
+        return (
+          <>
+            <h1>Welcome {user.displayName}</h1>
+          </>
+        );
+      } else if (signInStatus === false) {
       return <h1>Learn to code for free with curated video tutorials!</h1>;
     }
   };
+
 
   return (
     <>
@@ -66,6 +63,7 @@ function Home() {
                   >
                     Sign Out
                   </button>
+                  <button onClick={()=>{console.log(isAnon)}}>Is Anon?</button>
                 </div>
               ) : (
                 <div>
