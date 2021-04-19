@@ -4,7 +4,7 @@ import "firebase/firestore";
 import Listings from "./videoListings.js";
 import "firebase/auth";
 function Courses() {
-const [isCourses,setCourses] = useState(false)
+const [videos,setVideos]= useState('')
 const db = firebase.firestore();
 useEffect(()=>{
 firebase.auth().onAuthStateChanged((user)=>{
@@ -15,7 +15,7 @@ firebase.auth().onAuthStateChanged((user)=>{
        
         return { id: doc.id, ...doc.data() }
       })
-      console.log(tempDoc)
+      tempDoc.length ? setVideos('Here are your courses') : console.log('Here are your courses!')
     })
   } else {
     console.log('you must be signed in')
@@ -24,7 +24,7 @@ firebase.auth().onAuthStateChanged((user)=>{
 },[])
   return (
     <>
-      <h1>Saved Courses will go here</h1>
+      <h1>{videos}</h1>
     </>
   );
 }
