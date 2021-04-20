@@ -9,8 +9,8 @@ function Topics() {
 
   useEffect(() => {
     gapi.load("client", loadClient);
-  },[]);
-  
+  }, []);
+
   function loadClient() {
     gapi.client.setApiKey("AIzaSyCFiBdff1JxkTe4F_0auryiuqiYMIJd48g");
     return gapi.client
@@ -23,9 +23,7 @@ function Topics() {
           console.error("Error loading GAPI client for API", err);
         }
       );
-
   }
-
 
   return (
     <>
@@ -53,76 +51,103 @@ function Topics() {
           </div>
           <div className="topics-cont">
             <div className="topics-icons">
-              <Link to= '/Topics/HTML5'>
-                <div className="topics-card" style={{ background: "#dd4b25" }}>
-                  <div className="inner">
-                    <i className="fab fa-html5" style={{ color: "white" }}></i>
+              <div style={{ background: "#dd4b25" }}>
+                <Link to="/Topics/HTML5">
+                  <div className="topics-card">
+                    <div className="inner">
+                      <i
+                        className="fab fa-html5"
+                        style={{ color: "white" }}
+                      ></i>
+                    </div>
+                    <div className="text">
+                      <p>HTML5</p>
+                    </div>
                   </div>
-                  <div className="text">
-                    <p>HTML5</p>
+                </Link>
+              </div>
+
+              <div style={{ background: "#254bdd" }}>
+                <Link to="/Topics/CSS3">
+                  <div className="topics-card">
+                    <div className="inner">
+                      <i
+                        className="fab fa-css3-alt"
+                        style={{ color: "white" }}
+                      ></i>
+                    </div>
+                    <div className="text">
+                      <p>CSS3</p>
+                    </div>
                   </div>
-                </div>
-              </Link>
-              <Link  to ='/Topics/CSS3'>
-              <div className="topics-card" style={{ background: "#254bdd" }}>
-                <div className="inner">
-                  <i className="fab fa-css3-alt" style={{ color: "white" }}></i>
-                </div>
-                <div className="text">
-                  <p>CSS3</p>
-                </div>
+                </Link>
               </div>
-              </Link>
-              <Link  to ='/Topics/JavaScript'>
-              <div className="topics-card" style={{ background: "#efd81d" }}>
-                <div className="inner">
-                  <i className="fab fa-js"></i>
-                </div>
-                <div className="text">
-                  <p>Javascript</p>
-                </div>
+              <div style={{ background: "#efd81d" }}>
+                <Link to="/Topics/JavaScript">
+                  <div className="topics-card">
+                    <div className="inner">
+                      <i className="fab fa-js"></i>
+                    </div>
+                    <div className="text">
+                      <p>Javascript</p>
+                    </div>
+                  </div>
+                </Link>
               </div>
-              </Link>
-              <Link  to ='/Topics/VueJS'>
-              <div className="topics-card" style={{ background: "#41b883" }}>
-                <div className="inner">
-                  <i className="fab fa-vuejs"></i>
-                </div>
-                <div className="text">
-                  <p>Vue.Js</p>
-                </div>
+
+              <div style={{ background: "#41b883" }}>
+                <Link to="/Topics/VueJS">
+                  <div className="topics-card">
+                    <div className="inner">
+                      <i className="fab fa-vuejs"></i>
+                    </div>
+                    <div className="text">
+                      <p>Vue.Js</p>
+                    </div>
+                  </div>
+                </Link>
               </div>
-              </Link>
-              <Link  to ='/Topics/ReactJS'>
-              <div className="topics-card" style={{ background: "#5ed3f3" }}>
-                <div className="inner">
-                  <i className="fab fa-react"></i>
-                </div>
-                <div className="text">
-                  <p>React.Js</p>
-                </div>
+
+              <div style={{ background: "#5ed3f3" }}>
+                <Link to="/Topics/ReactJS">
+                  <div className="topics-card">
+                    <div className="inner">
+                      <i className="fab fa-react"></i>
+                    </div>
+                    <div className="text">
+                      <p>React.Js</p>
+                    </div>
+                  </div>
+                </Link>
               </div>
-              </Link>
-              <Link  to ='/Topics/NodeJS'>
-              <div className="topics-card" style={{ background: "#8cbf3d" }}>
-                <div className="inner">
-                  <i className="fab fa-node-js"></i>
-                </div>
-                <div className="text">
-                  <p>Node.Js</p>
-                </div>
+              <div style={{ background: "#8cbf3d" }}>
+                <Link to="/Topics/NodeJS">
+                  <div className="topics-card">
+                    <div className="inner">
+                      <i className="fab fa-node-js"></i>
+                    </div>
+                    <div className="text">
+                      <p>Node.Js</p>
+                    </div>
+                  </div>
+                </Link>
               </div>
-              </Link>
-              <Link  to ='/Topics/Python Programming'>
-              <div className="topics-card" style={{ background: "#4584b6" }}>
-                <div className="inner">
-                  <i className="fab fa-python" style={{ color: "white" }}></i>
-                </div>
-                <div className="text">
-                  <p>Python</p>
-                </div>
+
+              <div style={{ background: "#4584b6" }}>
+                <Link to="/Topics/Python Programming">
+                  <div className="topics-card">
+                    <div className="inner">
+                      <i
+                        className="fab fa-python"
+                        style={{ color: "white" }}
+                      ></i>
+                    </div>
+                    <div className="text">
+                      <p>Python</p>
+                    </div>
+                  </div>
+                </Link>
               </div>
-              </Link>
             </div>
           </div>
         </div>
