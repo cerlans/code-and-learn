@@ -6,7 +6,7 @@ import * as firebaseui from 'firebaseui'
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
    var uiConfig = {
-        signInFlow: 'popup',
+        signInFlow: 'redirect',
         signInSuccessUrl: '/',
         signInOptions: [
           // Leave the lines as is for the providers you want to offer your users.

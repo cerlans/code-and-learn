@@ -15,7 +15,7 @@ firebase.auth().onAuthStateChanged((user)=>{
        
         return { id: doc.id, ...doc.data() }
       })
-      tempDoc.length ? setVideos('Here are your courses') : console.log('Here are your courses!')
+      tempDoc.length ? setVideos('Here are your courses') : setVideos('to take notes, begin by adding courses')
     })
   } else {
     console.log('you must be signed in')
@@ -24,7 +24,7 @@ firebase.auth().onAuthStateChanged((user)=>{
 },[])
   return (
     <>
-      <h1>{videos}</h1>
+      
     </>
   );
 }
