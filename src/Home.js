@@ -65,13 +65,6 @@ function Home() {
                   >
                     Sign Out
                   </button>
-                  <button
-                    onClick={() => {
-                      console.log(isAnon);
-                    }}
-                  >
-                    Is Anon?
-                  </button>
                 </div>
               ) : (
                 <div>
