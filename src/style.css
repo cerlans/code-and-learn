@@ -67,7 +67,7 @@
 	}
 	.sign-in .button-container {
 		text-align: center;
-    margin-top:rem;
+    margin-top:3rem;
 	}
 	.information-view {
 		border-radius: initial;
@@ -169,7 +169,7 @@
 .information-view .listingParent {
   display:flex;
   flex-direction:column;
-  margin-bottom:3rem;
+  
 }
 .listingParent .videoListing {
   width:100%;

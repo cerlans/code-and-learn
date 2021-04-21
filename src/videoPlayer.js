@@ -10,25 +10,29 @@ function Player() {
   const [video, setVideo] = useState("");
   const [isLoading, setLoading] = useState(true);
   const [isLogged, setLogged] = useState(null);
-  const [userId,setId] = useState()
-  const [buttonText,setButtonText] = useState('Add to your courses')
-  const [currentClass,toggleClass] = useState('addCourseButton')
+  const [userId, setId] = useState();
+  const [buttonText, setButtonText] = useState("Add to your courses");
+  const [currentClass, toggleClass] = useState("addCourseButton");
   let data = useLocation();
 
   var db = firebase.firestore();
 
   useEffect(() => {
+    let unmounted = false;
     firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        let id= user.uid
-        setId(id)
+      if (user && !unmounted) {
+        let id = user.uid;
+        setId(id);
         setLogged(true);
-      } else {
-        setLogged(false);
-      }
+      } 
     });
+    return () => {
+      unmounted = true;
+      console.log("The component has been unmounted, but why?");
+      setLogged(false)
+    };
   }, []);
-  
+
   useEffect(() => {
     execute();
   }, []);
@@ -53,7 +57,6 @@ function Player() {
       );
   }
 
-
   return (
     <>
       {isLoading ? (
@@ -64,30 +67,32 @@ function Player() {
         <>
           <div className="iframePanel">
             <h1>{` '${video.title}' by ${video.channelTitle}`}</h1>
-            <iframe
-              src={`https://www.youtube.com/embed/${id}`}
-              title="video"
-            />
+            <iframe src={`https://www.youtube.com/embed/${id}`} title="video" />
             {isLogged ? (
               <div>
-                <button className={currentClass} onClick={()=>{
-                   db.collection(`Users/${userId}/SavedVideos`)
-                    .add({
+                <button
+                  className={currentClass}
+                  onClick={() => {
+                    db.collection(`Users/${userId}/SavedVideos`)
+                      .add({
                         channelTitle: video.channelTitle,
                         videoTitle: video.title,
                         videoDescription: video.description,
-                        videoId:id,
-                        videoThumbnail:video.thumbnails.medium.url
+                        videoId: id,
+                        videoThumbnail: video.thumbnails.medium.url,
                       })
                       .then(() => {
                         console.log("Document successfully written!");
-                        setButtonText('Course Added!')
-                        toggleClass('courseAddedButton')
+                        setButtonText("Course Added!");
+                        toggleClass("courseAddedButton");
                       })
                       .catch((error) => {
                         console.error("Error writing document: ", error);
                       });
-                }}>{buttonText}</button>
+                  }}
+                >
+                  {buttonText}
+                </button>
               </div>
             ) : (
               <div style={{ color: "blue" }}>
@@ -105,4 +110,3 @@ function Player() {
 }
 
 export default Player;
-
