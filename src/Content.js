@@ -13,11 +13,6 @@ import "firebase/firestore";
 
 function Content() {
   const [loggedStatus, setLogged] = useState(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const handleOnClick = (index) => {
-    setActiveIndex(index); // remove the curly braces
-  };
 
   let db = firebase.firestore();
   //let dataBaseReference = db.collection('Users').doc(user.uid);
