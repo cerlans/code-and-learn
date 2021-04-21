@@ -392,6 +392,8 @@ iframe {
 	}
   .topics-icons div{
     display:inline-block;
+    margin-right:1rem;
+    margin-bottom:1rem;
   }
   .topics-icons a {
     
